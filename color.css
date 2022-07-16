@@ -1,0 +1,26 @@
+.color-picker{
+    display: flex;
+    gap: 10px;
+}
+.circal{
+    content: '';
+    width: 15px;
+    height: 15px;
+    border: 3px solid #fff;
+    position: absolute;
+    left: 0;
+    right: 0;
+    box-sizing: border-box;
+    margin: 0px auto;
+    top: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.color-block{
+    position: relative;
+    height: 250px;
+}
+.color-block canvas{
+    height: 250px;
+}

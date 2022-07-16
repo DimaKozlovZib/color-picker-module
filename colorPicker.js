@@ -1,5 +1,5 @@
 function colorPicker(box) {
-
+    document.querySelector("head").insertAdjacentHTML("afterbegin", `<link rel="stylesheet" href="color.css">`)
     function gradient() {
         //w - width canvas, h - heigth canvas
         let canvas = document.querySelector("#gradient-canvas");
@@ -15,5 +15,29 @@ function colorPicker(box) {
         cx.fillRect(0, 0, w, h);
     }
     gradient();
+    let block = document.querySelector(".color-block");
+    function mouseMoveToGetColor() {
+        let moveCircal = false;
+
+        block.onmousedown = () => {
+            moveCircal = true;
+        }
+        block.onmousemove = (event) => {
+            if (moveCircal) {
+                let y = event.clientY - block.offsetTop;
+                let h = block.offsetHeight;
+                if (y <= h - 15 && y >= 0) {
+                    document.querySelector(".color-block .circal").style.top = y + "px";
+                }
+            }
+        }
+        block.onmouseup = () => {
+            moveCircal = false;
+        }
+        block.onmouseout = () => {
+            moveCircal = false;
+        }
+    }
+    mouseMoveToGetColor();
 }
 colorPicker()
