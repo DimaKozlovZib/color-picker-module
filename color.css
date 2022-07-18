@@ -1,7 +1,4 @@
-.color-picker{
-    display: flex;
-    gap: 10px;
-}
+
 .circal{
     content: '';
     width: 15px;
@@ -12,15 +9,31 @@
     right: 0;
     box-sizing: border-box;
     margin: 0px auto;
-    top: 5px;
+    top: 0px;
     border-radius: 50%;
     cursor: pointer;
 }
 
 .color-block{
-    position: relative;
     height: 250px;
 }
-.color-block canvas{
+.color-block canvas,#opasity-canvas{
     height: 250px;
+    width: 40px;
+}
+.saturation-block .circal{
+    margin: 0px;
+    top: 0;
+}
+#saturation-canvas{
+    height: 250px;
+    width: 250px;
+}
+.color-picker{
+    gap: 10px;
+    display: flex;
+    align-items: stretch;
+}
+.color-picker > *{
+    position: relative;
 }
